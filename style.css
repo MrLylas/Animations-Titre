@@ -17,14 +17,14 @@ body{
     height: 100vh;
     background: linear-gradient(90deg, rgb(2, 185, 115,0.2),rgb(5, 89, 245,0.2));
     animation: animation_background 4s infinite;
-    background-size: 200% 200%;
+    background-size: 300% 300%;
 }
 
 /* -------------------------Container--------------------------------- */
 
 .container{
     width: 100%;
-    height: 956px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,4 +87,41 @@ svg:hover{
     50%{fill:transparent}
     75%{fill:rgb(184, 244, 255)}
     100%{fill:transparent}
+}
+/*--------------------------------------------Icones-------------------------------------*/
+
+.icones{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.bouton{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 100px;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: animation_icones 6s infinite,growthAnimation 3s ease-in 1 forwards;
+    cursor: pointer;
+}
+
+.bouton:hover{
+    animation: growthHover 1s ease-in-out 1 forwards,animation_icones 6s infinite;
+    cursor: pointer;
+}
+@keyframes animation_icones {
+    0%{border-color: rgb(60, 4, 165);
+        color: rgb(60, 4, 165)}
+    25%{border-color:rgb(112, 154, 216);
+        color: rgb(112, 154, 216)}
+    50%{border-color: rgb(142, 2, 235);
+        color: rgb(142, 2, 235)}
+    75%{border-color: rgb(112, 154, 216);
+        color: rgb(112, 154, 216)}
+    100%{border-color: rgb(60, 4, 165);
+        color: rgb(60, 4, 165)}
 }
