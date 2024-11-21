@@ -1,0 +1,90 @@
+*{margin: 0; padding: 0;}
+
+/* -------------------------Background--------------------------------- */
+
+@keyframes animation_background {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 50% 100%;}
+    100%{background-position: 0% 50%;}
+}
+
+body{
+    background-color: black;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(2, 185, 115,0.2),rgb(5, 89, 245,0.2));
+    animation: animation_background 4s infinite;
+    background-size: 200% 200%;
+}
+
+/* -------------------------Container--------------------------------- */
+
+.container{
+    width: 100%;
+    height: 956px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: transparent;
+}
+
+/* -------------------------Text Animé--------------------------------- */
+
+@keyframes textApparition{
+    0%{stroke-dashoffset: 400;}
+    100%{
+        stroke-dashoffset: 0;}
+}
+@keyframes growthAnimation{
+    0%{scale: 1;}
+    90%{scale: 1.2;}
+    100%{scale: 1;}
+}
+
+@keyframes growthHover{
+    0%{scale: 1;}
+    50%{scale: 1.2;}
+    100%{scale: 1;}
+}
+
+
+svg path{
+    fill: transparent;
+    stroke: blueviolet;
+    stroke-width: 3;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: textApparition 3s ease-in-out 1 forwards,animation_border 6s infinite,animation_fill 5s 3s ease-in infinite;
+    z-index: 100;
+}
+
+svg{
+    animation: growthAnimation 3s ease-in 1 forwards;
+    cursor: pointer;
+}
+
+svg:hover{
+    animation: growthHover 1s ease-in-out 1 forwards;
+    cursor: pointer;
+}
+/* -------------------------Border Animation--------------------------------- */
+
+@keyframes animation_border {
+    0%{stroke: rgb(60, 4, 165)}
+    25%{stroke:rgb(112, 154, 216)}
+    50%{stroke: rgb(142, 2, 235)}
+    75%{stroke: rgb(112, 154, 216)}
+    100%{stroke: rgb(60, 4, 165)}
+}
+
+@keyframes animation_fill{
+    0%{fill:transparent}
+    25%{fill:rgb(230, 185, 248)}
+    50%{fill:transparent}
+    75%{fill:rgb(184, 244, 255)}
+    100%{fill:transparent}
+}
